@@ -1,3 +1,5 @@
+require 'deface'
+
 module ForemanCollectdGraphsPlugin
   class Engine < ::Rails::Engine
     engine_name 'foreman_collectd_graphs_plugin'
