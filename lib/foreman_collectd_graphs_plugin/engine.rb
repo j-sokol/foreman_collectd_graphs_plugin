@@ -77,5 +77,15 @@ module ForemanCollectdGraphsPlugin
       locale_domain = 'foreman_collectd_graphs_plugin'
       Foreman::Gettext::Support.add_text_domain locale_domain, locale_dir
     end
+    initializer 'foreman_collectd_graphs_plugin.deface_host_view' do |_app|
+      Deface::Override.new(:virtual_path => "hosts/show.html.erb",
+                       :name => "remove_parent_organization_on_create",
+                       :insert_bottom => 'erb[loud]:contains("select_f"):contains(":parent")',
+                       :text => '<% if taxonomy.is_a?(Location) %><%= render_original %><% end %>'
+                       )
+    end
+
+
+
   end
 end
