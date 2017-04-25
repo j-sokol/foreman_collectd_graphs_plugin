@@ -3,7 +3,7 @@ require 'date'
 
 Gem::Specification.new do |s|
   s.name        = 'foreman_collectd_graphs_plugin'
-  s.version     = ForemanCollectdGraphsPlugin::0.1
+  s.version     = ForemanCollectdGraphsPlugin::VERSION
   s.license     = 'GPL-3.0'
   s.authors     = 'Jan Sokol' 
   s.email       = 'jan.sokol.glx@gmail.com'
