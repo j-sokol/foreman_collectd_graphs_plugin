@@ -10,10 +10,10 @@ for how to install Foreman plugins
 ## Config file
 
 create file collectd-graph-plugin.yml in /etc/foreman/plugins with following:
-
+```
   :collectd-graph-plugin:
     :hostname: collectd.weedtime.cz/CGP/
-
+```
 where on collectd.weedtime.cz/CGP/ is running collectd graph pannel, see https://github.com/pommi/CGP
 
 ## Contributing
