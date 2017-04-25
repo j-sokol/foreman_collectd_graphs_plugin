@@ -18,7 +18,7 @@ module ForemanCollectdGraphsPlugin
 
     initializer 'foreman_collectd_graphs_plugin.register_plugin', :before => :finisher_hook do |_app|
       Foreman::Plugin.register :foreman_collectd_graphs_plugin do
-        requires_foreman '>= 1.4'
+        requires_foreman '>= 1.11'
 
         # Add permissions
         security_block :foreman_collectd_graphs_plugin do

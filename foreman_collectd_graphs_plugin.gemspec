@@ -3,11 +3,10 @@ require 'date'
 
 Gem::Specification.new do |s|
   s.name        = 'foreman_collectd_graphs_plugin'
-  s.version     = ForemanCollectdGraphsPlugin::VERSION
-  s.date        = Time.zone.today
+  s.version     = ForemanCollectdGraphsPlugin::0.1
   s.license     = 'GPL-3.0'
-  s.authors     = ['TODO: Your name']
-  s.email       = ['TODO: Your email']
+  s.authors     = 'Jan Sokol' 
+  s.email       = 'jan.sokol.glx@gmail.com'
   s.homepage    = 'TODO'
   s.summary     = 'TODO: Summary of ForemanCollectdGraphsPlugin.'
   # also update locale/gemspec.rb
