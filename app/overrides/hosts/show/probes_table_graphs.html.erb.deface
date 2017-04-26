@@ -2,4 +2,5 @@
 <div class="col-md-8">
 kekeke
 <%= @host.name %>
+<%= @SETTINGS[:foreman_url] %>
 </div>
