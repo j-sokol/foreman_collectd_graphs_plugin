@@ -1,6 +1,6 @@
 <!-- insert_bottom '#host-show' -->
 <div class="col-md-8">
-<% if SETTINGS[:collectd-graph-plugin]  %>
+<% if Setting[:cgp-host]   %>
 
 
 kekeke
