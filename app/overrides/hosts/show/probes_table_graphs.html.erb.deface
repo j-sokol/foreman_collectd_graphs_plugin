@@ -2,12 +2,12 @@
 <div class="col-md-8">
 <%
 #@collectd_hostname = <%= @SETTINGS[:ctd-hostname]
-@collectd_hostname = 'collectd.weedtime.cz/CGP/'
+collectd_hostname = 'collectd.weedtime.cz/CGP/'
 
 %>
 kekeke
 <%= @host.name %>
-<%= @collectd_hostname %>
+<%= collectd_hostname %>
 
 
 </div>
