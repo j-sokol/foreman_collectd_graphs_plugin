@@ -1,5 +1,5 @@
 <!-- insert_bottom '#host-show' -->
 <div class="col-md-8">
 kekeke
-<%= Setting[:cgp-host] =>
+<%= Setting[:cgp-host] %>
 </div>
