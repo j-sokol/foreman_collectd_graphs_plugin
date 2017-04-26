@@ -1,4 +1,4 @@
-class Setting::Config < ::Setting
+class Setting::foreman_collectd_graphs_plugin < ::Setting
   def self.load_defaults
     return unless ActiveRecord::Base.connection.table_exists?('settings')
     return unless super
@@ -6,13 +6,13 @@ class Setting::Config < ::Setting
     Setting.transaction do
       [
         self.set('cgp-host', N_('IP address or hostname of collectd server running CGP'), 'example.com'),
-      ].compact.each { |s| self.create s.update(:category => "Setting::Config") }
+      ].compact.each { |s| self.create s.update(:category => "Setting::foreman_collectd_graphs_plugin") }
     end
 
     true
   end
 
   def self.humanized_category
-    N_('collectd-graph-plugin')
+    N_('foreman_collectd_graphs_plugin')
   end
 end

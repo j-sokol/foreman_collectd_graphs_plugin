@@ -86,7 +86,7 @@ module ForemanCollectdGraphsPlugin
     end
 
     initializer 'foreman_collectd_graphs_plugin.load_default_settings', :before => :load_config_initializers do |app|
-      require_dependency File.expand_path("../../../app/models/setting/config.rb", __FILE__)
+      require_dependency File.expand_path("../../../app/models/setting/foreman_collectd_graphs_plugin.rb", __FILE__) if (Setting.table_exists? rescue(false))
     end
 
 
