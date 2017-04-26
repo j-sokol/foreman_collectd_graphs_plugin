@@ -9,6 +9,11 @@ module ForemanCollectdGraphsPlugin
     config.autoload_paths += Dir["#{config.root}/app/models/concerns"]
     config.autoload_paths += Dir["#{config.root}/app/overrides"]
 
+    initializer 'foreman_colly.load_default_settings', :before => :load_config_initializers do |app|
+      require_dependency File.expand_path("../../../app/models/setting/collectd_graphs_plugin.rb", __FILE__) if (Setting.table_exists? rescue(false))
+    end
+
+
     # Add any db migrations
     initializer 'foreman_collectd_graphs_plugin.load_app_instance_data' do |app|
       ForemanCollectdGraphsPlugin::Engine.paths['db/migrate'].existent.each do |path|
@@ -84,11 +89,6 @@ module ForemanCollectdGraphsPlugin
                        :text => '<% if taxonomy.is_a?(Location) %><%= render_original %><% end %>'
                        )
     end
-
-    initializer 'foreman_collectd_graphs_plugin.load_default_settings', :before => :load_config_initializers do |app|
-      require_dependency File.expand_path("../../../app/models/setting/foreman_collectd_graphs_plugin.rb", __FILE__) if (Setting.table_exists? rescue(false))
-    end
-
 
 
   end
