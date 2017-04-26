@@ -1,13 +1,4 @@
 <!-- insert_bottom '#host-show' -->
 <div class="col-md-8">
-<% if SETTINGS[:collectd-graph-plugin]  %>
-<h2> Collectd plugin showing graphs from <%=  SETTINGS[:collectd-graph-plugin][:hostname] %>. <h2>
-
-
-<% else %>
-<h4> Collectd plugin is enabled, but no server with graphs is set. Please check your configuration on this server in /etc/foreman/plugins/ </h4>
-<% end %>
-
-
-
+kekekekke
 </div>
