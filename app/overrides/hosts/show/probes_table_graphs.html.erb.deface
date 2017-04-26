@@ -7,7 +7,7 @@
 %>
 kekeke
 <%= @host.name %>
-<%= @colletd_hostname %>
+<%= @collectd_hostname %>
 
 
 </div>
