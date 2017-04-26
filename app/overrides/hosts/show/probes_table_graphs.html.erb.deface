@@ -1,6 +1,13 @@
 <!-- insert_bottom '#host-show' -->
 <div class="col-md-8">
+<%
+#@collectd_hostname = <%= @SETTINGS[:ctd-hostname]
+@collectd_hostname = 'collectd.weedtime.cz/CGP/'
+
+%>
 kekeke
 <%= @host.name %>
-<%= @SETTINGS[:foreman_url] %>
+<%= @colletd_hostname %>
+
+
 </div>
