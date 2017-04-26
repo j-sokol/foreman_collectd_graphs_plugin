@@ -1,13 +1,42 @@
 <!-- insert_bottom '#host-show' -->
 <div class="col-md-8">
 <%
-#@collectd_hostname = <%= @SETTINGS[:ctd-hostname]
+collectd_hostname =  @Setting[:cgp-host]
 collectd_hostname = 'collectd.weedtime.cz/CGP/'
 
 %>
-kekeke
-<%= @host.name %>
-<%= collectd_hostname %>
+
+<% if  collectd_hostname %>
+<h2> Collectd plugin showing graphs from <%=  collectd_hostname %>. <h2>
+
+<h3> Fast links into CGP: <br>
+<a href="http://<%= collectd_hostname %>/host.php?h=<%= @host.name %>&amp;p=load">load</a>
+<a href="http://<%= collectd_hostname %>/host.php?h=<%= @host.name %>&amp;p=cpu">cpu</a>
+<a href="http://<%= collectd_hostname %>/host.php?h=<%= @host.name %>&amp;p=memory">memory</a>
+<a href="http://<%= collectd_hostname %>/host.php?h=<%= @host.name %>&amp;p=swap">swap</a>
+<a href="http://<%= collectd_hostname %>/host.php?h=<%= @host.name %>&amp;p=df">df</a>
+<a href="http://<%= collectd_hostname %>/host.php?h=<%= @host.name %>&amp;p=disk">disk</a>
+<a href="http://<%= collectd_hostname %>/host.php?h=<%= @host.name %>&amp;p=entropy">entropy</a>
+<a href="http://<%= collectd_hostname %>/host.php?h=<%= @host.name %>&amp;p=interface">interface</a>
+<a href="http://<%= collectd_hostname %>/host.php?h=<%= @host.name %>&amp;p=irq">irq</a>
+<a href="http://<%= collectd_hostname %>/host.php?h=<%= @host.name %>&amp;p=processes">processes</a>
+<a href="http://<%= collectd_hostname %>/host.php?h=<%= @host.name %>&amp;p=users">users</a>
+</h3>
+
+
+<a href="http://<%= collectd_hostname %>/detail.php?p=load&t=load&h=<%= @host.name %>&s=86400&x=800&y=350" > <%= image_tag("https://" + collectd_hostname+  "/graph.php?p=load&t=load&h=" + @host.name + "&s=86400&x=800&y=350", :alt => "Load") %> </a>
+<a href="http://<%= collectd_hostname %>/detail.php?p=memory&t=memory&h=<%= @host.name %>&s=86400&x=800&y=350" > <%= image_tag("https://" + collectd_hostname+  "/graph.php?p=memory&t=memory&h=" + @host.name + "&s=86400&x=800&y=350", :alt => "Memory Usage") %> </a>
+
+<a href="http://<%= collectd_hostname %>/detail.php?p=cpu&pi=0&t=cpu&h=<%= @host.name %>&s=86400&x=800&y=350" > <%= image_tag("https://" + collectd_hostname+  "/graph.php?p=cpu&pi=0&t=cpu&h=" + @host.name + "&s=86400&x=800&y=350", :alt => "CPU1") %> </a>
+<a href="http://<%= collectd_hostname %>/detail.php?p=cpu&pi=0&t=cpu&h=<%= @host.name %>&s=86400&x=800&y=350" > <%= image_tag("https://" + collectd_hostname+  "/graph.php?p=cpu&pi=0&t=cpu&h=" + @host.name + "&s=86400&x=800&y=350", :alt => "CPU2") %> </a>
+
+
+<% else %>
+<h4> Collectd plugin is enabled, but no server with graphs is set. Please check your configuration in Settings > CGPGraphs </h4>
+<% end %>
+
+
+
 
 
 </div>

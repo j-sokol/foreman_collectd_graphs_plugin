@@ -5,7 +5,7 @@ class Setting::CTDgraphs < ::Setting
 
     Setting.transaction do
       [
-        self.set('cgp-host', N_('IP address or hostname of collectd server running CGP'), 'example.com'),
+        self.set('cgp-host', N_('IP address or hostname of collectd server running CGP'), ''),
       ].compact.each { |s| self.create s.update(:category => "Setting::CTDgraphs")}
     end
 
