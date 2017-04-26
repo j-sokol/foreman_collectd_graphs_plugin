@@ -1,8 +1,8 @@
 <!-- insert_bottom '#host-show' -->
 <div class="col-md-8">
 <%
-collectd_hostname =  @Setting[:cgp-host]
-collectd_hostname = 'collectd.weedtime.cz/CGP/'
+collectd_hostname =  Setting[:cgp-host]
+#collectd_hostname = 'collectd.weedtime.cz/CGP/'
 
 %>
 kekeke
